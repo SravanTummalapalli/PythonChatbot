@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
+import { Analytics } from '@vercel/analytics/react';
 
 const API_BASE = "https://python-chatbot-p599.onrender.com";
 
@@ -648,6 +649,7 @@ export default function App() {
           <p className="input-hint">Enter to send · Shift+Enter new line · 🎙️ for voice</p>
         </div>
       </main>
+      <Analytics />
     </div>
   );
 }
