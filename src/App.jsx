@@ -467,6 +467,10 @@ export default function App() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question, session_id: cid }),
       });
+
+      if (!res.body) {
+        throw new Error("Streaming not supported");
+      }
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
       let acc = "";
